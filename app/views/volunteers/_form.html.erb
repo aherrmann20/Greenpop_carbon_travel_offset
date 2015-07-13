@@ -17,6 +17,14 @@
 
 	<%= f.input :email %><br>
 
+	<%= f.input :distance, collection: 0..20000, prompt: "How far did you travel?" %>
+
+	<%= f.input :transportation do %>
+		<%= f.select :transportation, Transportation.all.map { |t| [t.mode, t.id] }, include_blank: true %>
+	<% end %>
+
 	<%= f.button :submit %>
+
+
 
 <% end %>

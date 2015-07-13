@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713104100) do
+ActiveRecord::Schema.define(version: 20150713123113) do
+
+  create_table "transportations", force: :cascade do |t|
+    t.string   "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "mode"
+  end
 
   create_table "volunteers", force: :cascade do |t|
     t.string   "first_name"
@@ -21,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150713104100) do
     t.integer  "tree_offset"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "distance"
   end
 
 end

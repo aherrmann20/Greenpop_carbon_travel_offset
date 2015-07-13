@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Creating volunteers..."
+puts "Creating Transportation..."
+
+Transportation.create!(mode: "Car")
+Transportation.create!(mode: "SUV")
+Transportation.create!(mode: "Carpool")
+Transportation.create!(mode: "Plane")
+Transportation.create!(mode: "Bus")
+Transportation.create!(mode: "Railway")
+Transportation.create!(mode: "Walk/Bike")
