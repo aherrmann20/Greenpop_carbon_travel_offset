@@ -1,3 +1,3 @@
 class Volunteer < ActiveRecord::Base
-	has_many :transportation
+	belongs_to :transportation
 end

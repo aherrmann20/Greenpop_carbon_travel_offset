@@ -22,9 +22,7 @@
 	<%= f.input :distance, collection: 0..20, prompt: "How far did you travel?" %>
 
 <h2>Method of Transport</h2>
-	<%= f.input :transportation do %>
-		<%= f.select :transportation, Transportation.all.map { |t| [t.mode, t.id] }, include_blank: true %>
-	<% end %>
+	<%= f.association :transportation, collection: Transportation.all.map { |t| [t.mode, t.id] }, include_blank: true %>
 
 	<%= f.button :submit %>
 
