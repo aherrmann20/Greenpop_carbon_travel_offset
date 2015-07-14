@@ -8,14 +8,13 @@
 Transportation.delete_all
 Volunteer.delete_all
 
-puts "Creating volunteers..."
 puts "Creating Transportation..."
 
 
-Transportation.create!(mode: "Car")
-Transportation.create!(mode: "SUV")
-Transportation.create!(mode: "Carpool")
-Transportation.create!(mode: "Plane")
-Transportation.create!(mode: "Bus")
-Transportation.create!(mode: "Railway")
-Transportation.create!(mode: "Walk/Bike")
+Transportation.create! mode: "Car", copkm: 165
+Transportation.create! mode: "SUV", copkm: 312
+Transportation.create! mode: "Carpool", copkm: 112
+Transportation.create! mode: "Plane", copkm: 210
+Transportation.create! mode: "Bus", copkm: 185
+Transportation.create! mode: "Railway", copkm: 119
+Transportation.create! mode: "Walk/Bike", copkm: 0

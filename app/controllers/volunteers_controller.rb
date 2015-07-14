@@ -19,7 +19,7 @@ class VolunteersController < ApplicationController
 	end
 
 	def index
-		@volunteers = Volunteers.all
+		@volunteers = Volunteer.all
 	end
 
 	private
