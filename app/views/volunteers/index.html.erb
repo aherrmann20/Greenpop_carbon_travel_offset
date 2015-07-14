@@ -37,7 +37,18 @@
 		<%= volunteer.tree_offset.to_s %>
 	</td>
 
-	<tr>
+	</tr>
+
 <% end %>
+
+<% total_weight = [] %>
+
+	<% @volunteers.each do |volunteer| %>
+		<% total_weight << volunteer.co_weight %>
+	<% end %>
+
+<%= total_weight.sum.to_s %>
+
+</table>
 
 <%= link_to "Home", root_path %>
