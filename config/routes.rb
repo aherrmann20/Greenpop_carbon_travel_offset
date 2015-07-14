@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :volunteers do
-    resources :transportations
-  end
+  resources :volunteers
+  resources :transportations
 
   root "volunteers#new"
   # The priority is based upon order of creation: first created -> highest priority.

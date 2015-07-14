@@ -1,3 +1,5 @@
+<%= simple_form_for(@volunteer) do |f| %>
+
 <% if @volunteer.errors.any? %>
 	<h2>
 		<%= pluralize(@volunteer.errors.count, "error") %> prohibted you from continuing. Please try again.
@@ -9,22 +11,21 @@
 	</ul>
 <% end %>
 
-<%= simple_form_for(@volunteer) do |f| %>
-
+<h2>Name and Email</h2>
 	<%= f.input :first_name %><br>
 
 	<%= f.input :last_name %><br>
 
 	<%= f.input :email %><br>
 
-	<%= f.input :distance, collection: 0..20000, prompt: "How far did you travel?" %>
+<h2>Distance Travelled</h2>
+	<%= f.input :distance, collection: 0..20, prompt: "How far did you travel?" %>
 
+<h2>Method of Transport</h2>
 	<%= f.input :transportation do %>
 		<%= f.select :transportation, Transportation.all.map { |t| [t.mode, t.id] }, include_blank: true %>
 	<% end %>
 
 	<%= f.button :submit %>
-
-
 
 <% end %>

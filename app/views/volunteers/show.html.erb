@@ -1,4 +1,14 @@
 <p>
-<%= @volunteer.first_name %>
-<%= @volunteer.last_name %>
+	<strong>Name:</strong>
+	<%= @volunteer.first_name %>
+	<%= @volunteer.last_name %><br>
+
+	<strong>Email:</strong>
+	<%= @volunteer.email %><br>
+
+	<strong>Distance Travelled:</strong>
+	<%= @volunteer.distance.to_s %><br>
+
+	<strong>Mode of Transport:</strong>
+	<%= @volunteer.transportation %>
 </p>

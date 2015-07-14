@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713123113) do
+ActiveRecord::Schema.define(version: 20150713135609) do
 
   create_table "transportations", force: :cascade do |t|
     t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
     t.string   "mode"
+    t.integer  "volunteer_id"
   end
+
+  add_index "transportations", ["volunteer_id"], name: "index_transportations_on_volunteer_id"
 
   create_table "volunteers", force: :cascade do |t|
     t.string   "first_name"
@@ -26,9 +29,12 @@ ActiveRecord::Schema.define(version: 20150713123113) do
     t.string   "email"
     t.float    "co_weight"
     t.integer  "tree_offset"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "distance"
+    t.integer  "transportation_id"
   end
+
+  add_index "volunteers", ["transportation_id"], name: "index_volunteers_on_transportation_id"
 
 end

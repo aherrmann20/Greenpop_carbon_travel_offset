@@ -24,7 +24,7 @@ class VolunteersController < ApplicationController
 
 	private
 	def volunteer_params
-		params.require(:volunteer).permit(:first_name, :last_name, :email)
+		params.require(:volunteer).permit(:first_name, :last_name, :email, :distance, :transportation_id)
 	end
 
 end
