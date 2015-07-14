@@ -13,7 +13,7 @@
 	<%= @volunteer.transportation.mode %><br>
 
 	<strong>Carbon Output:</strong>
-	<% @volunteer.co_weight = @volunteer.transportation.copkm * @volunteer.distance %>
+	<% @volunteer.co_weight = @volunteer.transportation.copkm %>
 	<%= @volunteer.co_weight.to_s + " kg" %><br>
 
 	<strong>Trees to Offset Carbon:</strong>
