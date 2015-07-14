@@ -5,9 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Transportation.delete_all
+Volunteer.delete_all
 
 puts "Creating volunteers..."
 puts "Creating Transportation..."
+
 
 Transportation.create!(mode: "Car")
 Transportation.create!(mode: "SUV")

@@ -7,8 +7,41 @@
 	<%= @volunteer.email %><br>
 
 	<strong>Distance Travelled:</strong>
-	<%= @volunteer.distance.to_s %><br>
+	<%= @volunteer.distance.to_s + " km" %><br>
 
 	<strong>Mode of Transport:</strong>
-	<%= @volunteer.transportation.mode %>
+	<%= @volunteer.transportation.mode %><br>
+
+	<strong>Carbon Output:</strong>
+	<% if @volunteer.transportation.mode.capitalize == "Car" %>
+		<% @volunteer.co_weight = @volunteer.distance * 165 %>
+	<% elsif @volunteer.transportation.mode.capitalize == "SUV" %>
+		<% @volunteer.co_weight = @volunteer.distance * 312 %>
+	<% elsif @volunteer.transportation.mode.capitalize == "Plane" %>
+		<% @volunteer.co_weight = @volunteer.distance * 210 %>
+	<% elsif @volunteer.transportation.mode.capitalize == "Bus" %>
+		<% @volunteer.co_weight = @volunteer.distance * 185 %>
+	<% elsif @volunteer.transportation.mode.capitalize == "Railway" %>
+		<% @volunteer.co_weight = @volunteer.distance * 119 %>
+	<% elsif @volunteer.transportation.mode.capitalize == "Walk/Bike" %>
+		<% @volunteer.co_weight = 0 %>
+	<% end %>
+
+	<%= @volunteer.co_weight.to_s + " kg" %>
+
+	<strong>Trees to Offset Carbon:</strong>
+	<% @volunteer.tree_offset = @volunteer.co_weight / 11818 %>
+	<% if @volunteer.tree_offset <= 1 %>
+		<% @volunteer.tree_offset = 1 %>
+	<% end %>
+
+	You need to plant
+	<%= @volunteer.tree_offset.to_s %>
+	<% if @volunteer.tree_offset == 1 %>
+		<%= "tree" %>
+	<% else %>
+		<%= "trees" %>
+	<% end %>
+	in order to offset your carbon output! Get planting!
+
 </p>
