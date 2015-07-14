@@ -1,17 +1,30 @@
 <h1>Volunteers</h1>
 
-<table style = "width:100%">
+<table border = "1" style = "width:100%">
+
+<th>Name:</th>
+<th>Surname:</th>
+<th>Email:</th>
+<th>Mode of Transportation:</th>
+<th>Kg of Carbon Produced:</th>
+<th>Trees needed to offset (over the next year):</th>
 
 <% @volunteers.each do |volunteer| %>
 	<tr>
 	<td>
 		<strong><%= link_to volunteer.first_name, volunteer_path(volunteer.id) %></strong>
 	</td>
+
 	<td>
 		<strong><%= link_to volunteer.last_name, volunteer_path(volunteer.id) %></strong>
 	</td>
+
 	<td>
 		<%= volunteer.email %>
+	</td>
+
+	<td>
+		<%= volunteer.transportation.mode %>
 	</td>
 
 	<td>
